@@ -3237,7 +3237,10 @@ h5.mb-0 .project-btn span{
 .featured-tab .tab-pane img.pull-right {
   margin: 0 0 0 40px;
 }
-
+.tab-pane table, th, td {
+   font-size: 13px;
+   border: 2px solid black;
+}
 .featured-tab .nav-link {
   position: relative;
   z-index: 2;
