@@ -1,0 +1,11 @@
+name = "RALT"
+license = "MIT"
+description = "Custom theme based on Logicraft by furioustheme"
+homepage = "https://github.com/furioustheme/logicraft"
+tags = []
+features = []
+min_version = "0.41.0"
+
+[author]
+  name = "Ramindo Autonesia"
+  homepage = "https://ramindoautonesia.com/"
