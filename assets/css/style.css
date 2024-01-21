@@ -4173,7 +4173,7 @@ p.panel-title a.collapsed {
 
 /*-- Footer main --*/
 .footer-main {
-  background: url(../images/footer-bg.png);
+  background: url(../images/background/footer.png);
   background-size: cover;
   background-position: 100%;
   color: #8c93a5;
