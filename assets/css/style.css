@@ -4297,9 +4297,6 @@ p.panel-title a.collapsed {
   text-transform: uppercase;
 }
 
-.newsletter-form {
-  position: relative;
-}
 .newsletter-form input {
   width: 100%;
   margin: 15px 0;
