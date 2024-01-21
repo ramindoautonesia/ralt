@@ -4311,7 +4311,7 @@ p.panel-title a.collapsed {
 .newsletter-form .btn.btn-primary {
   position: absolute;
   right: -5px;
-  top: 0;
+  top: 15px;
   border-radius: 0 5px 5px 0;
   padding: 13px 20px;
   height: 51px;
