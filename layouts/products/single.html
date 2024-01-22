@@ -1,0 +1,93 @@
+{{ define "pre-main" }}
+
+<div class="banner-area" id="banner-area" style="background-image:url(/images/banner/products.jpg);">
+   <div class="container">
+      <div class="row justify-content-center">
+         <div class="col">
+            <div class="banner-heading">
+               <h1 class="banner-title">{{.Title}}</h1>
+               {{ partial "breadcrumb" . }}
+            </div>
+         </div>
+         <!-- Col end-->
+      </div>
+      <!-- Row end-->
+   </div>
+   <!-- Container end-->
+</div>
+<!-- Banner area end-->
+
+ <section class="single-project" id="single-project">
+    <div class="container">
+      <div class="row text-center">
+         <div class="col-md-12">
+            <h2 class="section-title"><span>{{.Params.subtitle}}</span>{{.Title}}</h2>
+         </div>
+      </div>
+       <div class="row">
+          <div class="col-lg-4">
+            <img src="{{.Params.coverImage}}" alt=""/>
+          </div>
+          <!-- col end -->
+          <div class="col-lg-8 project-right-side">
+             <div class="single-project-content">
+               <div class="featured-tab">
+                  <ul class="nav nav-tabs">
+                     <li>
+                        <a class="animated active fadeIn" href="#tab_a" data-toggle="tab">
+                           <span>Description</span>	
+                        </a>
+                     </li>
+                     <li>
+                        <a class="animated fadeIn" href="#tab_b" data-toggle="tab">
+                           <span>Specifications</span>					
+                        </a>
+                     </li>
+                  </ul>
+                  <div class="tab-content">
+                     <div class="tab-pane active animated fadeInRight" id="tab_a">
+                        <div class="tab-wrapper">
+                          
+                           <div class="ts-service-box">
+                              <div class="ts-service-box-content">
+
+{{ end }}
+
+
+{{ define "main" }}
+
+    {{ .Content }}
+{{ end }}
+
+{{ define "post-main" }}
+</div><!-- Tab pane 3 end -->	
+</div><!-- tab content -->
+</div><!-- Featured tab end -->
+</div>
+<!-- project content end -->
+
+</div>
+<!-- col end -->
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        
+        <div class="post-tags pull-left">
+            <b>Categories:</b>
+            {{ range .Params.categories }}
+                <a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
+            {{ end }}
+        </div>
+    </div>
+<!-- row end -->
+</div>
+
+    
+</div>
+<!-- main container end -->
+</section>
+
+
+
+{{ end }}

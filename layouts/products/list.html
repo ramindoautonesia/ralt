@@ -1,0 +1,80 @@
+{{ define "pre-main" }}
+
+<div class="banner-area" id="banner-area" style="background-image:url(/images/banner/products.jpg);">
+    <div class="container">
+       <div class="row justify-content-center">
+          <div class="col">
+             <div class="banner-heading">
+                <h1 class="banner-title">{{.Title}}</h1>
+                {{ partial "breadcrumb" . }}
+             </div>
+          </div>
+          <!-- Col end-->
+       </div>
+       <!-- Row end-->
+    </div>
+    <!-- Container end-->
+ </div>
+ <!-- Banner area end-->
+
+<section id="main-container" class="main-container">
+    <div class="container">
+       <div class="row text-center">
+          <div class="col-md-12">
+
+{{ end }}
+
+{{ define "main" }}
+    {{ .Content }}
+{{ end }}
+
+{{ define "post-main" }}
+
+</div>
+</div>
+
+{{ $lastIndex := sub (.Pages.ByParam "categories" | len) 1 }}
+
+{{ range $index, $element := (.Pages.ByParam "categories") }}
+
+
+{{ if eq (mod $index 3) 0 }}
+
+{{ if gt $index 2}}
+
+<div class="gap-60"></div>
+
+{{ end }}
+
+<div class="row text-center">
+
+{{ end }}
+
+<div class="col-lg-4 col-md-12">
+    <div class="ts-service-box">
+        <div class="ts-service-content">
+            <a href="{{ $element.Permalink }}">
+                <h3 class="service-title">{{ $element.Title }}</h3>
+            </a>
+           </div>
+        <div class="ts-service-image-wrapper">
+            <a href="{{ $element.Permalink }}">
+                <img class="img-fluid" src="{{$element.Params.coverImage}}" alt="">
+            </a>
+       </div>
+       
+    </div>
+ </div>
+
+{{ if or (eq (mod $index 3) 2) (eq $index $lastIndex) }}
+
+ </div>
+ 
+ {{ end }}
+
+{{ end }}
+
+</div><!--/ Container end -->
+</section><!-- Main container end -->
+
+{{ end }}
