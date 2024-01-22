@@ -19,14 +19,16 @@
 
  <section class="single-project" id="single-project">
     <div class="container">
-      <div class="row text-center">
-         <div class="col-md-12">
-            <h2 class="section-title"><span>{{.Params.subtitle}}</span>{{.Title}}</h2>
-         </div>
-      </div>
+       <div class="row text-center">
+          <div class="col-md-12">
+             <h2 class="section-title"><span>{{.Params.subtitle}}</span>{{.Title}}</h2>
+          </div>
+       </div>
        <div class="row">
           <div class="col-lg-4">
-            <img src="{{.Params.coverImage}}" alt=""/>
+            {{ $image := resources.Get .Params.coverImage }}
+            {{ $image := $image.Resize "300x" }}
+	    <img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" alt=""/>
           </div>
           <!-- col end -->
           <div class="col-lg-8 project-right-side">
