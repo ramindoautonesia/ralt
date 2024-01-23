@@ -30,10 +30,11 @@
                       <li class="nav-item dropdown"><a class="nav-link" href="#" data-toggle="dropdown">Products<i class="fa fa-angle-down"></i></a>
                          <ul class="dropdown-menu" role="menu">
                             <li><a href="/products/">All</a></li>
-                            <li><a href="/categories/black-bear">Black Bear</a></li>
-                            <li><a href="/categories/comeup">ComeUp</a></li>
-                            <li><a href="/categories/kio">KIO</a></li>
-                            <li><a href="/categories/ramsey">Ramsey</a></li>
+			    {{ with $.Site.Params.brands }}
+			    {{ range $.Site.Params.brands }}
+			    <li><a href="{{ print "/categories/" .name }}">{{ .title }}</a></li>
+			    {{ end }}
+			    {{ end }}
                          </ul>
                       </li>
                       <!-- li end-->
