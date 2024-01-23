@@ -45,7 +45,7 @@
 				<div class="ts-service-image-wrapper text-center">
 					{{ $logo_path := print "images/logo/" .name ".png" }}
 					{{ $logo := resources.Get $logo_path  }}
-					{{ $logo := $logo.Resize "x150" }}
+					{{ $logo := $logo.Fit "500x150" }}
 					<a href="categories/{{ .name }}/"><img class="img-fluid" src="{{ $logo.RelPermalink }}" width="{{ $logo.Width }}" height="{{ $logo.Height }}" alt="{{ .title }} logo"></a>
 				</div>
 				<div class="ts-service-content">
