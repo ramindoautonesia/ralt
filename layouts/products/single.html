@@ -26,7 +26,8 @@
        </div>
        <div class="row">
           <div class="col-lg-4">
-            {{ $image := resources.Get .Params.coverImage }}
+            {{ $image_path := print "images/products/" .Params.coverImage }}
+            {{ $image := resources.Get $image_path }}
             {{ $image := $image.Resize "300x" }}
 	    <img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" alt=""/>
           </div>

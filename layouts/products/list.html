@@ -59,7 +59,8 @@
            </div>
         <div class="ts-service-image-wrapper">
             <a href="{{ $element.Permalink }}">
-                {{ $image := resources.Get $element.Params.coverImage }}
+                {{ $image_path := print "images/products/" $element.Params.coverImage }}
+                {{ $image := resources.Get $image_path }}
                 {{ $image := $image.Resize "300x" }}
                 <img class="img-fluid" src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" alt="{{ $element.Title }}">
             </a>
