@@ -38,54 +38,23 @@
 	   </div>
 	   <!-- Title row end-->
 	   <div class="row ts-service-row-box">
+                 {{ with $.Site.Params.brands }}
+                 {{ range $.Site.Params.brands }}
 		  <div class="col-lg-6 col-md-6">
 			 <div class="ts-service-box">
 				<div class="ts-service-image-wrapper text-center">
-				   <a href="categories/black-bear/"><img class="img-fluid" src="/images/logo/logo-blackbear.png" alt="Black Bear logo"></a>
+					{{ $logo_path := print "images/logo/" .name ".png" }}
+					{{ $logo := resources.Get $logo_path  }}
+					{{ $logo := $logo.Resize "x150" }}
+					<a href="categories/{{ .name }}/"><img class="img-fluid" src="{{ $logo.RelPermalink }}" width="{{ $logo.Width }}" height="{{ $logo.Height }}" alt="{{ .title }} logo"></a>
 				</div>
 				<div class="ts-service-content">
-				   <h3 class="service-title">Black Bear</h3>
+					<h3 class="service-title">{{ .title }}</h3>
 				</div>
 			 </div>
-			 <!-- Service1 end-->
 		  </div>
-		  <!-- Col end-->
-		  <div class="col-lg-6 col-md-6">
-			 <div class="ts-service-box">
-				<div class="ts-service-image-wrapper text-center">
-				   <a href="categories/comeup/"><img class="img-fluid" src="/images/logo/logo-comeupwinch.png" alt="COMEUP Winch logo"></a>
-				</div>
-				<div class="ts-service-content">
-				   <h3 class="service-title">ComeUp</h3>
-				</div>
-			 </div>
-			 <!-- Service1 end-->
-		  </div>
-		  <!-- Col end-->
-		  <div class="col-lg-6 col-md-6">
-			 <div class="ts-service-box">
-				<div class="ts-service-image-wrapper text-center">
-				   <a href="categories/kio/"><img class="img-fluid" src="/images/logo/logo-kio.png" alt="KIO logo"></a>
-				</div>
-				<div class="ts-service-content">
-				   <h3 class="service-title">KIO</h3>
-				</div>
-			 </div>
-			 <!-- Service1 end-->
-		  </div>
-		  <!-- Col end-->
-		  <div class="col-lg-6 col-md-6">
-			 <div class="ts-service-box">
-				<div class="ts-service-image-wrapper text-center">
-				   <a href="categories/ramsey/"><img class="img-fluid" src="/images/logo/logo-ramsey.png" alt="RAMSEY Winch logo"></a>
-				</div>
-				<div class="ts-service-content">
-				   <h3 class="service-title">Ramsey</h3>
-				</div>
-			 </div>
-			 <!-- Service1 end-->
-		  </div>
-		  <!-- Col end-->
+                 {{ end }}
+                 {{ end }}
 	   </div>
 	   <!-- Content row end-->
 	</div>
