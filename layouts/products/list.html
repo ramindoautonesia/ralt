@@ -53,12 +53,12 @@
 <div class="col-lg-4 col-md-12">
     <div class="ts-service-box">
         <div class="ts-service-content">
-            <a href="{{ $element.Permalink }}">
+            <a href="{{ $element.RelPermalink }}">
                 <h3 class="service-title">{{ $element.Title }}</h3>
             </a>
            </div>
         <div class="ts-service-image-wrapper">
-            <a href="{{ $element.Permalink }}">
+            <a href="{{ $element.RelPermalink }}">
                 {{ $image_path := print "images/products/" $element.Params.coverImage }}
                 {{ $image := resources.Get $image_path }}
                 {{ $image := $image.Resize "300x" }}
