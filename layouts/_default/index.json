@@ -1,5 +1,8 @@
 {{- $.Scratch.Add "index" slice -}}
 {{- range where site.RegularPages "Type" "in" site.Params.mainSections -}}
-    {{- $.Scratch.Add "index" (dict "title" .Title "coverImage" .Params.coverImage "categories" .Params.categories "contents" .Plain "link" .RelPermalink) -}}
+    {{- $path := print "images/products/" .Params.coverImage -}}
+    {{- $image := resources.Get $path -}}
+    {{- $image := $image.Resize "250x" -}}
+    {{- $.Scratch.Add "index" (dict "title" .Title "image" $image.RelPermalink "categories" .Params.categories "contents" .Plain "link" .RelPermalink) -}}
 {{- end -}}
 {{- $.Scratch.Get "index" | jsonify -}}
