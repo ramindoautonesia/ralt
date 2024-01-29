@@ -25,14 +25,14 @@
           </div>
        </div>
        <div class="row">
-          <div class="col-lg-4">
+          <div class="col-lg-3">
             {{ $image_path := print "images/products/" .Params.coverImage }}
             {{ $image := resources.Get $image_path }}
-            {{ $image := $image.Resize "300x" }}
+            {{ $image := $image.Resize "250x" }}
 	    <img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" alt=""/>
           </div>
           <!-- col end -->
-          <div class="col-lg-8 project-right-side">
+          <div class="col-lg-9 project-right-side">
              <div class="single-project-content">
                <div class="featured-tab">
                   <ul class="nav nav-tabs">
