@@ -26,42 +26,39 @@
                 <div class="ts-contact-info"><span class="ts-contact-icon float-left"><i class="icon icon-map-marker2"></i></span>
                    <div class="ts-contact-content">
                       <h3 class="ts-contact-title">Address</h3>
-                      <p>Jl. KH.Moh.Mansyur No.175A, RT.1/RW.2, Duri Utara, Kec. Tambora, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11270</p>
-                      <p><a href="https://goo.gl/maps/kseb3ruGkSmZicZB6">View on Google Maps</a></p>
+		      <p>{{ $.Site.Params.contacts.address }}</p>
                    </div>
                    <!-- Contact content end-->
                 </div>
                 <div class="ts-contact-info last"><span class="ts-contact-icon float-left"><i class="fa fa-whatsapp"></i></span>
                   <div class="ts-contact-content">
                      <h3 class="ts-contact-title">WhatsApp</h3>
-                     <p>+6289-9017-3505</p>
-                     <p><a href="https://api.whatsapp.com/send?phone=628990173505">Chat via WhatsApp</a></p>
+                     <p>+{{ $.Site.Params.contacts.whatsapp }}</p>
+		     <p><a href="https://api.whatsapp.com/send?phone={{ $.Site.Params.contacts.whatsapp }}">Chat via WhatsApp</a></p>
                   </div>
                   <!-- Contact content end-->
                </div>
                <div class="ts-contact-info last"><span class="ts-contact-icon float-left"><i class="fa fa-fax"></i></span>
                   <div class="ts-contact-content">
                      <h3 class="ts-contact-title">Fax</h3>
-                     <p>(021) 6331649</p>
+		     <p>{{ $.Site.Params.contacts.fax }}</p>
                   </div>
                   <!-- Contact content end-->
                </div>
                 <div class="ts-contact-info"><span class="ts-contact-icon float-left"><i class="icon icon-phone3"></i></span>
                    <div class="ts-contact-content">
                       <h3 class="ts-contact-title">Phone</h3>
-                      <p>(021) 6319619</p>
-                      <p>(021) 6319620</p>
-                      <p>(021) 6329621</p>
-                      <p>(021) 6319310</p> 
-                      <p>(021) 6315671</p>
+		      {{- range $.Site.Params.contacts.phone -}}
+		      <p>{{ . }}</p>
+		      {{- end -}}
                    </div>
                    <!-- Contact content end-->
                 </div>
                 <div class="ts-contact-info last"><span class="ts-contact-icon float-left"><i class="icon icon-envelope"></i></span>
                   <div class="ts-contact-content">
                      <h3 class="ts-contact-title">Email</h3>
-                     <p>ramindo_id@yahoo.com</p>
-                     <p><a href="mailto:ramindo_id@yahoo.com">Send Email</a></p>
+		     <p>{{ $.Site.Params.contacts.email }}</p>
+		     <p><a href="mailto:{{ $.Site.Params.contacts.email }}">Send Email</a></p>
                   </div>
                   <!-- Contact content end-->
                </div>
