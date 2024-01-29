@@ -76,7 +76,7 @@ function populateResults(results) {
         rIndex++;
         var output = render(templateDefinition, {
             title: value.item.title,
-            link: value.item.permalink,
+            link: value.item.link,
             coverImage: value.item.coverImage,
         });
         if (rIndex % 3 == 1)
