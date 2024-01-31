@@ -29,7 +29,7 @@
             {{ $image_path := print "images/products/" .Params.coverImage }}
             {{ $image := resources.Get $image_path }}
             {{ $image := $image.Resize "250x" }}
-	    <img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" alt=""/>
+	    <img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" alt=".Title"/>
           </div>
           <!-- col end -->
           <div class="col-lg-9 project-right-side">
