@@ -1,5 +1,4 @@
-<ul>
-	{{ range $.Site.Params.contacts.phone }}
-	<li>{{ . }}</li>
-	{{ end }}
-</ul>
+{{ range $.Site.Params.contacts.phone }}
+{{ . }}
+<br>
+{{ end }}
