@@ -54,6 +54,17 @@
                    </div>
                    <!-- Contact content end-->
                 </div>
+                <div class="ts-contact-info"><span class="ts-contact-icon float-left"><i class="fa fa-shopping-bag"></i></span>
+                   <div class="ts-contact-content">
+                      <h3 class="ts-contact-title">E-commerce</h3>
+		      {{- with $.Site.Params.contacts.ecommerce -}}
+		      {{- range $.Site.Params.contacts.ecommerce -}}
+		      <p><a href="{{ .url }}">{{ .name }}</a></p>
+                      {{- end -}}
+                      {{- end -}}
+                   </div>
+                   <!-- Contact content end-->
+                </div>
                 <div class="ts-contact-info last"><span class="ts-contact-icon float-left"><i class="icon icon-envelope"></i></span>
                   <div class="ts-contact-content">
                      <h3 class="ts-contact-title">Email</h3>
