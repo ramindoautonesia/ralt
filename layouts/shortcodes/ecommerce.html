@@ -1,0 +1,6 @@
+{{ with $.Site.Params.contacts.ecommerce }}
+{{ range $.Site.Params.contacts.ecommerce }}
+<a href="{{ .url }}">{{ .name }}</a>
+<br>
+{{ end }}
+{{ end }}
