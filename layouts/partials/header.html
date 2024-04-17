@@ -32,7 +32,7 @@
                             <li><a href="/products/">All</a></li>
 			    {{ with $.Site.Params.brands }}
 			    {{ range $.Site.Params.brands }}
-			    <li><a href="{{ print "/categories/" .name }}">{{ .title }}</a></li>
+			    <li><a href="{{ print "/categories/" .name }}/">{{ .title }}</a></li>
 			    {{ end }}
 			    {{ end }}
                          </ul>
