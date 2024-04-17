@@ -79,7 +79,7 @@
         <div class="post-tags pull-left">
             <b>Categories:</b>
             {{ range .Params.categories }}
-                <a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
+                <a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}/">{{ . }}</a>
             {{ end }}
         </div>
     </div>
